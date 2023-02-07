@@ -1,9 +1,9 @@
-require "redis-activesupport"
+require "active_support/cache/redis_cache_store"
 require "set"
 
 module ActiveSupport
   module Cache
-    class RedisClusterStore < RedisStore
+    class RedisClusterStore < RedisCacheStore
       attr_reader :ignored_command_errors
 
       DEFAULT_IGNORED_COMMAND_ERRORS = ["ERR Proxy error"].freeze
